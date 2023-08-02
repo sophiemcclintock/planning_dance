@@ -110,6 +110,69 @@
 <h2>Sprint 3</h2>
 <p>For this sprint I put the databases on hold for a second and add the sessions and log in and out functions. I started by setting up the log in and log out and making sure that worked. Then I added the session to all the pages that needed it, like the news page and classes page. This meant that if we were in session (logged in) and people had a certain authorisation people could add new items and add different students to the class. If we were just in session (logged in) then the ‘log in’ in the corner would change to a log out and we would be able to see who was logged in, what their member_id was and what their authorization was. </p>
 <p>Below you can see a video of me testing to check if the sessions and log in/log out was working</p>
+<video controls>
+            <source src="assets/vids/Sessions_recording.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+<h3>Reflection</h3>
+<p>This sprint was a little bit more difficult as I had to work around the databases and make sure that it worked no matter who was signed in and the different authorization gave you access to different things. The next thing for me to do is create a registration table that links the classes table and the member table.</p>
+<hr>
+<h2>Sprint 4</h2>
+<p>In this sprint, I created a registration table that connected the classes table to the members table so that people could be enrolled in different classes, as well as a members table. This involved creating a google sheets table and importing it into Py charm so that I didn’t have to write out every single entry and could just get the information from the table. It also involved creating a new page that only people with a certain authorization could access, named members where you could see everyone who was enrolled in the dance school. Below you can see the plan I have done that includes the registration table. </p>
+<h4>The plan for the news and members table</h4>
+    <img class="img-fluid" src="assets/images/Database_plan4.jpg">
+<hr>
+<h4>The registration table in the create_db file</h4>
+<p>Again, I created a registration table in the create_db file. I created a member_id and classes_id so that I could connect each member to a particular class. The foreign keys each connected to a different table, the member_id in the registration table connected to the member_id in the member table and the classes_if in the registration table connected to the classes_id in the classes table. On the members table in the google sheet that I had previously put in the database, I had written what class each person was in so this connected to the registration table. </p>
+<img class="img-fluid" src="assets/images/Registration_table.png">
+<hr>
+<h4>Code for registration on layout.py</h4>
+<p>Below you can see the code for the registration table in the layout.py. There is code so that the teachers can delete people from the classes and add people to the classes. The query after the delete query is making sure that the teachers can see who is registered in each class and then the next query is making sure when the teachers are trying to add people, they can see everyone in the member database. I also had to put in an error message in case the teachers tried to add someone who was already registered in the particular class. </p>
+<pre style="font-size: 1em;"><code class="Python">def registration():
+    data = request.args
+    print(data.keys())
+    if request.method == "GET":
+        if 'task' in data.keys():
+            if data['task'] == 'delete':
+                sql = """delete from registration where member_id = ? and classes_id = ?"""
+                values_tuple = (data['member_id'], data['classes_id'])
+                result = run_commit_query(sql, values_tuple, db_path)
+                print('delete')
+                print(result)
+            else:
+                return render_template('error.html' , message="Registrations task not understood")
+        sql = """select  m.member_id, m.name, m.email
+         from member m
+         join registration r on m.member_id = r.member_id
+         where r.classes_id = ?
+         order by m.name asc"""
+        values_tuple = (data['classes_id'],)
+        result = run_search_query_tuples(sql, values_tuple, db_path, True)
+        sql = """select  m.member_id, m.name, m.email
+         from member m
+         order by m.name asc
+         """
+        memberset = run_search_query_tuples(sql, (), db_path, True)
+        return render_template("registration.html", registration=result, memberset=memberset, classes_id=data['classes_id'])
+    elif request.method == "POST":
+        f = request.form
+        if data['task'] == 'add':
+            sql = """insert into registration(member_id, classes_id)
+            values((select member_id from member where name = ?), ?)"""
+            values_tuple = (f['student'], data['classes_id'])
+            result = run_commit_query(sql, values_tuple, db_path)
+            if result is False:
+                message = "Failed to add, most likely the member is already registered"
+                return render_template("error.html", message=message)
+            return redirect(url_for('registration', classes_id=data['classes_id']))
+        else:
+            return render_template('error.html', message="Registrations task not understood")
+    else:
+        # return the page with an error message
+        message = "Unrecognised command coming from news page"
+        return render_template("error.html", message=message)</code></pre>
+<p>Below you can see a video of me testing out the code above and making sure the teachers can see everyone who is registered in each class as well as delete and add people to different classes</p>
+<h2>Testing video!</h2>
 
     <h2>Brief</h2>
         <hr>
