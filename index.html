@@ -45,9 +45,28 @@
 <hr>
 <h3>Brief</h3>
 <p>Before starting the database, I had already created and styled the website that I was going to base my database off. My aim at the end of this project was to include two or three database tables in my website that people could interact with. Before starting the project, I planned out what my tables were going to be, below you can see the different tables I planned out. </p>
+<h3>Overall Project Backlog</h3>
+<p>This is a screenshot of the overall project backlog that I made for the database section of this website. It is taken half way through the project, more specifically when I had just started the classes database.</p>
+<a href="https://github.com/users/sophiemcclintock/projects/4/views/1?layout=board">This is the link to the database project backlog</a>
+    <img class="img-fluid" src="assets/images/Overall_project_backlog_for_databases.png">
+<hr>
+<h3>Describing Relevant Implications</h3>
+<h4>Privacy</h4>
+<p>Privacy is just about making sure that the information of the members is secure. For example, other users should not be able to view others personal information such as their phone number or email address. It also means only collecting the information needed to know when they are enrolling in the dance school. Passwords also need to be secure and different for each person. </p>
+<h4>Functionality</h4>
+<p>Functionality means that the database works properly. It should be error free and easy for a developer to write queries for it. It is making sure that the sql queries work and the data is of a consistent format between different cells in the same column. Foreign key references also need to be correct so that the correct member is associated with the correct class or news item that they have posted. The best way to check the functionality is to create test queries and regularly test everything in the website to make sure it is easy to use. </p>
+<h4>Sustainability and Future Proofing</h4>
+<p>This means make sure the database is sustainable or able to be used in the future by different people other than me. This requires me to lay everything out so that it can be updated really easily. For example, when I am making tables, I am ensuring to label everything with clear titles. It is also ensuring that all the foreign key references are working so that if you are updating their information, it will automatically appear in the correct of the other table, there is no need to update the information in more than one place. </p>
+<h4>End User Considerations</h4>
+<p>In general, this means making sure that the website is presented in an efficient and organised manner that caters to the users needs. It should be formatted to meet the users expectations of what a modern website should look like. This means that in forms you should be able to add, update and delete easily so that errors and minor mistakes can be avoided as much as possible. </p>
 <hr>
 <h2>Sprint One</h2>
 <p>Sprint one for the database consisted of creating a page on the website that I intend to turn into a database. For my website, I decided to start off by creating a database based off a news page where people could get information about what is happening at the dance school. I started off with creating the page and putting some styles in to make it look a little bit nicer because this would make the process of creating the actual database a lot easier! Then I imported the db_functions file that had already been created, and set up the news and members table in the create_db sqlite file. Once everything was ready to go, I actually ran the code and the database was created with just the two tables. </p>
+<h3>News Database Planning Board</h3>
+<p>This is a screenshot of the planning board I made to create the news database.</p>
+<a href="https://github.com/users/sophiemcclintock/projects/5/views/1?visibleFields=%5B%22Title%22%2C%22Status%22%2C%22Labels%22%5D">This is the link to the news database planning board</a>
+    <img class="img-fluid" src="assets/images/News_planning_board.png">
+<hr>
 <h4>The plan for the news and members table</h4>
     <img class="img-fluid" src="assets/images/Database_plan1.jpg">
 <hr>
@@ -95,7 +114,12 @@
 <hr>
 <h2>Sprint Two</h2>
 <p>In my next sprint, I decided to add another database based off my classes page. I had already made the classes page for the website and done all the styles so it just involved adding in the database, in quite a similar fashion to the news database.  This would be a more a bit more difficult as it would include a few more pages, as it meant the people who had an authorisation of 0 (the teachers at the dance school) would be able to view who was in the classes, and add people or delete people. I had to connect the members database to the classes database and add a datalist so that when the teachers were trying to add people to the classes, they could see who was a member in the dance school. A lot of this database was actually quite similar to the news database so a lot of the code I just copied through and changed for the classes page. </p>
-<h4>The plan for the news and members table</h4>
+<h3>Classes Database Planning Board</h3>
+<p>This is a screenshot of the planning board I made to create the classes database.</p>
+<a href="https://github.com/users/sophiemcclintock/projects/7/views/1?visibleFields=%5B%22Title%22%2C%22Status%22%2C%22Labels%22%5D">This is the link to the classes database planning board</a>
+    <img class="img-fluid" src="assets/images/Classes_planning_board.png">
+<hr>
+<h4>The plan for the classes table added onto the other two tables</h4>
     <img class="img-fluid" src="assets/images/Database_plan2.jpg">
 <hr>
 <h4>The classes table in the create_db sqlite file</h4>
@@ -119,7 +143,12 @@
 <hr>
 <h2>Sprint 4</h2>
 <p>In this sprint, I created a registration table that connected the classes table to the members table so that people could be enrolled in different classes, as well as a members table. This involved creating a google sheets table and importing it into Py charm so that I didn’t have to write out every single entry and could just get the information from the table. It also involved creating a new page that only people with a certain authorization could access, named members where you could see everyone who was enrolled in the dance school. Below you can see the plan I have done that includes the registration table. </p>
-<h4>The plan for the news and members table</h4>
+<h3>Registration Database Planning Board</h3>
+<p>This is a screenshot of the planning board I made to create the registration database.</p>
+<a href="https://github.com/users/sophiemcclintock/projects/8/views/1?visibleFields=%5B%22Title%22%2C%22Status%22%2C%22Labels%22%5D">This is the link to the registration database planning board</a>
+    <img class="img-fluid" src="assets/images/Registration_planning_board.png">
+<hr>
+<h4>The plan to connect the registration table to the other three tables</h4>
     <img class="img-fluid" src="assets/images/Database_plan4.jpg">
 <hr>
 <h4>The registration table in the create_db file</h4>
@@ -174,144 +203,17 @@
 <p>Below you can see a video of me testing out the code above and making sure the teachers can see everyone who is registered in each class as well as delete and add people to different classes</p>
 <h2>Testing video!</h2>
 
-    <h2>Brief</h2>
-        <hr>
-    <h2>Boards and sprints</h2>
-        <hr>
-        <!-- Heading levels -->
-            <h3>Sprint One</h3>
-            <p>Plan</p>
-            <p>Boards</p>
-            <p>Link to the Canvas Page</p>
-            <p>Test</p>
-            <p>Reflect</p>
-        <hr>
-            <h3>Sprint Two</h3>
-            <p>Plan</p>
-            <p>Boards</p>
-            <p>Link to the Canvas Page</p>
-            <p>Test</p>
-            <p>Reflect</p>
-        <hr>
-    <h3>Images (landscape fits better than portrait)</h3>
-    <!-- one image -->
-    <div class="row mb-2">
-        <div class="col-md-12 my-2">
-            <img class="img-fluid mx-auto d-block my-2" src="assets/images/place_holder.png"> </div>
-        </div>
-    <!-- two images -->
-    <div class="row">
-        <div class="col-md-6 my-2">
-           <img class="img-fluid mx-auto d-block" src="assets/images/place_holder_sm.jpg">
-        </div>
-        <div class="col-md-6 my-2">
-            <img class="img-fluid mx-auto d-block" src="assets/images/place_holder_sm.jpg">
-        </div>
-    </div>
-        <hr>
-
-    <h3>Video Test Example</h3>
-        <video controls>
-            <source src="assets/vids/littleTest.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <p>
-            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-            molestie consequat, vel illum dolore eu feugiat nulla facilisis at
-            vero eros et accumsan et iusto odio dignissim qui blandit praesent
-            luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-        </p>
-        <hr>
-</div>
-<!-- -->
-<div class="container-lg mb-2">
-    <h2> Relevant Implications Summary</h2>
-    <!-- groovy bootstrap list -->
-    <ol class="list-group list-group-numbered">
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-            <div class="ms-2 me-auto">
-                <div class="fw-bold">Subheading</div>
-                Content for list item
-            </div>
-            <span class="badge bg-primary rounded-pill">14</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-            <div class="ms-2 me-auto">
-                <div class="fw-bold">Subheading</div>
-                Content for list item
-            </div>
-            <span class="badge bg-primary rounded-pill">14</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-            <div class="ms-2 me-auto">
-                <div class="fw-bold">Subheading</div>
-                Content for list item
-            </div>
-            <span class="badge bg-primary rounded-pill">14</span>
-        </li>
-    </ol>
-    <hr>
+<hr>
+<h3>Addressing Relevant Implications</h3>
+<h4>Privacy</h4>
+<p>Privacy is not something that I have specially focused on while I have been creating this database. I have been doing lots of little shortcuts, for example giving everyone the same password so that it is easier for me to check everything works. But, if I was to focus on privacy a bit more I would ensure that everyone has a different password so people are unable to log into others accounts. I have made sure that only the teachers can access the member information and see who is enrolled in each class. When the students are enrolling in the school, they are only required to input the necessary information such as their name, birthday, year, and email and phone number so we could get in touch with them. I did not ask for their address as this was unnecessary in my opinion. </p>
+<h4>Functionality</h4>
+<p>Making sure my website was functional for me required lots of testing! I made sure to test after every sprint or every new thing that I had created so I could work out if there was an error relatively quickly. I also had to be careful and specific when I was doing certain things. For example, when I was transferring over the google sheets that had all the members, I made sure that the titles for the table I had made in the database previously were the same as the name of each column on the sheet. The sql installer file also helped me to set up the database so it was perfectly functional and I felt confident about making small changes during the development process. This file meant all the base information was already there and this made the general functionality a lot better. Wherever possible I also made the data fields for each different table unique and not null as this means any repeated entries or missed fields are picked up quickly during testing. </p>
+<h4>Sustainability and Future Proofing</h4>
+<p>One of the major things that I have done and am continuing to do to future proof my website, is to make sure as many things as possible are commented so that someone who is reading through my code can understand it. As I mentioned in the describing section, creating the foreign key references in the tables is also a form of sustainability because it means that you only have to update a particular reference in one place. For example, if someone’s name is changed in the members table, it will automatically change their name in the news table and the classes table. </p>
+<h4>End User Considerations</h4>
+<p>As a result of the database running through a website, for users to be able to understand and use the database efficiently, it needs to be laid out in a format that users would be familiar with, so similar to other websites. This means just simple things, like having a navigation bar at the top of the page so the users can navigate the page easily etc. It is important to have the different buttons (update, delete and add) on the forms so it is easy for the user to change the database. For example,  the update button is a vital feature in case the user makes a typing mistake in one of the news items, or something like that, so that they are able to change it easily. Another important feature to have is error pages the tell the user the mistake they have made. For example, in my database when someone tries to add a student to a class that they have already been added to, an error message appears telling them pretty much exactly that, so they know what has gone wrong. </p>
+<hr>
 </div>
 
-<div class="container-lg">
-<h2>Example code presentations</h2>
-    <p>These do not need to be used extensively but look great in the right place</p>
-    <!-- pre stands for pre-formatted and will render text as it appears in the htm code -->
-    <!-- this means extra line breaks appear hence the code starting with no spacings or line breaks-->
-<h3>Some SQL</h3>
-<pre style="font-size: 1em;"><code class="SQL">SELECT track_name as "Tracks",
-album_name as "Album", album_artist as "Artist" --Interesting comment
-FROM music_table
-WHERE track_name like "R%";</code></pre>
-<h3>Some Python</h3>
-<pre style="font-size: 1em;"><code class="Python"># interesting comment
-def review_fruit(l):
-    for x in l:
-        output = "{:&le; 10} -- {: &gt;4}".format(x[0], x[1])
-        print(output)
-    return None</code></pre>
-    <h3>Some CSS</h3>
-<pre style="font-size: 1em;">
-<code class="css">/* interesting comment */
-:root{
---base-back: rgb(150,150,150);
---black: rgb(0,0,0);
-}
-body{
-margin: 0;
-padding: 0;
-font-size: 100%;
-}</code></pre>
-<h3>Some HTML</h3>
-<!-- to present html code on an html coded web page raises an interesting problem -->
-<!-- the code needs to be converted into "escape" characters to handle the < and > -->
-<!-- there are online tools to do it https://codebeautify.org/html-escape-unescape -->
-<pre style="font-size: 1em;">
-<code class="html">&lt;!-- interesting comment --&gt;
-&lt;li class=&quot;list-group-item d-flex justify-content-between align-items-start&quot;&gt;
-&lt;div class=&quot;ms-2 me-auto&quot;&gt;
-    &lt;div class=&quot;fw-bold&quot;&gt;Subheading&lt;/div&gt;
-    Content for list item
-&lt;/div&gt;
-&lt;span class=&quot;badge bg-primary rounded-pill&quot;&gt;14&lt;/span&gt;
-&lt;/li&gt;
-</code>
-</pre>
-    <h3>Some Javascript (most likely will not need)</h3>
-<pre style="font-size: 1em;">
-<code class="javscript">function inBoundsCheck(xM, yM, x, y, w, h){
-    if( xM > x && xM < x+w && yM > y && yM < y+h){
-    // interesting comment
-        return true;
-    }else{
-        return false;
-    }
-}</code>
-</pre>
-</div>
-
-<footer> Your name </footer>
+<footer> Sophie </footer>
