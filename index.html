@@ -50,6 +50,10 @@
 <a href="https://github.com/users/sophiemcclintock/projects/4/views/1?layout=board">This is the link to the database project backlog</a>
     <img class="img-fluid" src="assets/images/Overall_project_backlog_for_databases.png">
 <hr>
+<h3>Overall Plan</h3>
+<p>Below you can see my overall plan for the database section of this website. The news, classes, member and contact databases are all quite similar, while the registration page is quite different. The registration table will be used to connect the classes and member database.</p>
+    <img class="img-fluid" src="assets/images/Overall_database_plan.jpg">
+<hr>
 <h3>Describing Relevant Implications</h3>
 <h4>Privacy</h4>
 <p>Privacy is just about making sure that the information of the members is secure. For example, other users should not be able to view others personal information such as their phone number or email address. It also means only collecting the information needed to know when they are enrolling in the dance school. Passwords also need to be secure and different for each person. </p>
@@ -200,9 +204,25 @@
         # return the page with an error message
         message = "Unrecognised command coming from news page"
         return render_template("error.html", message=message)</code></pre>
-<p>Below you can see a video of me testing out the code above and making sure the teachers can see everyone who is registered in each class as well as delete and add people to different classes</p>
-<h2>Testing video!</h2>
-
+<p>While completing Sprint 4, there was one particular error that I found really difficult to fix. As you can see in the screenshot below, there is a ‘search’ button for adding current members to the different classes. But, I had originally done two different queries, one for selecting the people who were already in the class, so they could be named above when the teachers were looking at registrations, and one selecting all the members so anyone could be added to the class. But, it was only picking up the first query so the only members that I could add to the class were people who were already in the class, which was obviously not ideal. I fixed this error by naming the second query, ‘memberset’. This meant I just had to be careful and make sure that I was ‘calling’ the correct query. The second issue is what you can see in the first screenshot, if someone had been added to more than one class, like Adia in this example, their name would come up twice. I fixed this by making sure that the name in the member_table, which is where these names were selected from, was unique so that when they were added to a class, they would not be added to the member table again, causing their name to come up twice. I then had to make sure that on the registration table, the member_id was not unique so that people could be added to more than one class. The first screenshot below shows the second issue of the repeated names. The second screenshot shows my code when I had names both the queries the same thing, and the third screenshot is showing the fixed version, when I named the second query memberset instead. You can see a bit further down in the video that the issue of members names coming up twice had been fixed. </p>
+<img class="img-fluid" src="assets/images/Error_screenshot.png">
+<img class="img-fluid" src="assets/images/Broken_error_screenshot.png">
+<img class="img-fluid" src="assets/images/Fixed_error_screenshot.png">
+<p>Below you can see a video of me testing out the code above and making sure the teachers can see everyone who is registered in each class as well as delete and add people to different classes.</p>
+<video controls>
+            <source src="assets/vids/Registration_recording.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+<h4>Reflection</h4>
+<p>This sprint was definitely a little bit more difficult because it required connecting the tables quite a bit more, in the queries and within the tables themselves. It was also quite different from the other two databases, which were quite similar to each other. But, I am pleased with the result, it is really good being able to add people from the members to the classes, it adds a new dimension to the website/database. </p>
+<hr>
+<h2>Sprint 5</h2>
+<p>For this sprint I created one more database based off the contact forms and touched up lots of little things in the other databases. The contact database was pretty much exactly the same as the news and classes database. So that did not require too much work. I have already put a final plan of all the tables at the top of the planning site, so I have not put another one below. The contact table is connected to any other table at the moment. </p>
+<h4>The contact table in the create_db file</h4>
+<p>Below you can see the contact table as well as an input that I have put in the contact table so that it is easy to test</p>
+<img class="img-fluid" src="assets/images/Contact_table.png">
+<h4>Overall Reflection on the Databases</h4>
+<p>Overall, the database was difficult to make and some things came out a bit differently to what I was expecting. But overall, I am happy with how the website runs, in my opinion it is easy to navigate and the databases make sense where they are. An issue that I ran into was that because for each different class, there is a photo, I wasn’t sure what the best way was for the teachers to be able to put in a different photo via the website. This is something that I would want to do if I had more time. I would also like to implement a ‘roll’ idea to the classes/member database so that when the classes happened you could tick who came and who didn’t, and then you would be able to see how much each student has attended the particular class. Another thing that I would probably do if I had more time would create a way for the teachers to view more information about the members, for example, their birthday or year at school. This would be useful and seeing as it is already information that the members had to put in in order to enrol, it would not be too difficult to do. But, these are all things that would require a little bit more time and overall, I am happy with how much I got done. </p>
 <hr>
 <h3>Addressing Relevant Implications</h3>
 <h4>Privacy</h4>
@@ -212,7 +232,7 @@
 <h4>Sustainability and Future Proofing</h4>
 <p>One of the major things that I have done and am continuing to do to future proof my website, is to make sure as many things as possible are commented so that someone who is reading through my code can understand it. As I mentioned in the describing section, creating the foreign key references in the tables is also a form of sustainability because it means that you only have to update a particular reference in one place. For example, if someone’s name is changed in the members table, it will automatically change their name in the news table and the classes table. </p>
 <h4>End User Considerations</h4>
-<p>As a result of the database running through a website, for users to be able to understand and use the database efficiently, it needs to be laid out in a format that users would be familiar with, so similar to other websites. This means just simple things, like having a navigation bar at the top of the page so the users can navigate the page easily etc. It is important to have the different buttons (update, delete and add) on the forms so it is easy for the user to change the database. For example,  the update button is a vital feature in case the user makes a typing mistake in one of the news items, or something like that, so that they are able to change it easily. Another important feature to have is error pages the tell the user the mistake they have made. For example, in my database when someone tries to add a student to a class that they have already been added to, an error message appears telling them pretty much exactly that, so they know what has gone wrong. </p>
+<p>As a result of the database running through a website, for users to be able to understand and use the database efficiently, it needs to be laid out in a format that users would be familiar with, so similar to other websites. This means just simple things, like having a navigation bar at the top of the page so the users can navigate the page easily etc. It is important to have the different buttons (update, delete and add) on the forms so it is easy for the user to change the database. For example,  the update button is a vital feature in case the user makes a typing mistake in one of the news items, or something like that, so that they are able to change it easily. Another important feature to have is error pages that tell the user the mistake they have made. For example, in my database when someone tries to add a student to a class that they have already been added to, an error message appears telling them pretty much exactly that, so they know what has gone wrong. </p>
 <hr>
 </div>
 
