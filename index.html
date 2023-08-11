@@ -15,7 +15,7 @@
     <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <div class="container-fluid header p-3">
-    <h1>Riptide</h1>
+    <h1>Riptide Planning Page</h1>
 </div>
 <nav class="navbar navbar-expand-lg px-3 py-2 mb-2">
     <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
@@ -25,13 +25,19 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Link 1</a>
+                <a class="nav-link" href="#S1">Sprint 1</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link 2</a>
+                <a class="nav-link" href="#S2">Sprint 2</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link 3</a>
+                <a class="nav-link" href="#S3">Sprint 3</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#S4">Sprint 4</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#S5">Sprint 5</a>
             </li>
         </ul>
     </div>
@@ -44,7 +50,7 @@
 <h2>Database Plan</h2>
 <hr>
 <h3>Brief</h3>
-<p>Before starting the database, I had already created and styled the website that I was going to base my database off. My aim at the end of this project was to include two or three database tables in my website that people could interact with. Before starting the project, I planned out what my tables were going to be, below you can see the different tables I planned out. </p>
+<p>Before starting the database, I had already created and styled the website that I was going to base my database off. My aim at the end of this project was to include two or three database tables in my website that people could interact with.</p>
 <h3>Overall Project Backlog</h3>
 <p>This is a screenshot of the overall project backlog that I made for the database section of this website. It is taken half way through the project, more specifically when I had just started the classes database.</p>
 <a href="https://github.com/users/sophiemcclintock/projects/4/views/1?layout=board">This is the link to the database project backlog</a>
@@ -56,7 +62,7 @@
 <hr>
 <h3>Describing Relevant Implications</h3>
 <h4>Privacy</h4>
-<p>Privacy is just about making sure that the information of the members is secure. For example, other users should not be able to view others personal information such as their phone number or email address. It also means only collecting the information needed to know when they are enrolling in the dance school. Passwords also need to be secure and different for each person. </p>
+<p>Privacy is just about making sure that the information of the members is secure. For example, other users should not be able to view others personal information such as their phone number or email address. It also means only collecting the necessary information when they are enrolling in the dance school. Passwords also need to be secure and different for each person. </p>
 <h4>Functionality</h4>
 <p>Functionality means that the database works properly. It should be error free and easy for a developer to write queries for it. It is making sure that the sql queries work and the data is of a consistent format between different cells in the same column. Foreign key references also need to be correct so that the correct member is associated with the correct class or news item that they have posted. The best way to check the functionality is to create test queries and regularly test everything in the website to make sure it is easy to use. </p>
 <h4>Sustainability and Future Proofing</h4>
@@ -64,7 +70,7 @@
 <h4>End User Considerations</h4>
 <p>In general, this means making sure that the website is presented in an efficient and organised manner that caters to the users needs. It should be formatted to meet the users expectations of what a modern website should look like. This means that in forms you should be able to add, update and delete easily so that errors and minor mistakes can be avoided as much as possible. </p>
 <hr>
-<h2>Sprint One</h2>
+<h2 id="S1">Sprint One</h2>
 <p>Sprint one for the database consisted of creating a page on the website that I intend to turn into a database. For my website, I decided to start off by creating a database based off a news page where people could get information about what is happening at the dance school. I started off with creating the page and putting some styles in to make it look a little bit nicer because this would make the process of creating the actual database a lot easier! Then I imported the db_functions file that had already been created, and set up the news and members table in the create_db sqlite file. Once everything was ready to go, I actually ran the code and the database was created with just the two tables. </p>
 <h3>News Database Planning Board</h3>
 <p>This is a screenshot of the planning board I made to create the news database.</p>
@@ -75,12 +81,12 @@
     <img class="img-fluid" src="assets/images/Database_plan1.jpg">
 <hr>
 <h4>The members and news table in the create_db sqlite file</h4>
-<p>As you can see in the screenshot below, I have created the two tables, members and news based on the plan above. I also added a foreign key reference at the bottom of the news table to contact member_id in the members table (which is the primary key) to the member_id in the news table(which is the foreign key). </p>
+<p>As you can see in the screenshot below, I have created the two tables, members and news based on the plan above. I also added a foreign key reference at the bottom of the news table to connect member_id in the members table (which is the primary key) to the member_id in the news table(which is the foreign key). </p>
     <img class="img-fluid" src="assets/images/Member_and_news_table.png">
 <h4>Testing for the first sql query for Sprint One.</h4>
 <p>This particular sprint was about combining the member and news tables so the user could see the information on the news item and who posted the information. As can be seen in the run box below, we can see the description of what each thing is, followed by what it actually is. For example, you can see that it tells us that HIP HOP UNITE DANCE COMPETITION is a title to the news item. This is a really helpful test because it helps me make sure that the correct values are coming out under the correct section.</p>
     <img class="img-fluid" src="assets/images/Testing_for_Sprint1.png">
-<p> After doing this test I implemented it into the code into the actual html file. The first code that you can see below is what I put into the server.py file, it is just the general sql query. Then I edited the news website, which was previously just 'front-end' (which means the html and styles have been worked out but the buttons are no functional). This involved making the buttons functional, for example being able to add more news items, delete them or update the contents of them. This is the second part of code you can see below.  </p>
+<p> After doing this test I implemented it into the code in the actual html file. The first code that you can see below is what I put into the server.py file, it is just the general sql query. Then I edited the news website, which was previously just 'front-end' (which means the html and styles have been worked out but the buttons are no functional). This involved making the buttons functional, for example being able to add more news items, delete them or update the contents of them. The second piece of code that you can see below is the code on the actual news website page. Because it is 'for row in news', this means it will automatically print out all the news items that are currently in the database. </p>
     <pre style="font-size: 1em;"><code class="Python">def news():
     sql = """select news.news_id, news.title, news.subtitle, news.content, news.newsdate, member.name
     from news
@@ -114,10 +120,12 @@
             Your browser does not support the video tag.
         </video>
 <h3>Reflection</h3>
-<p>Overall I am pleased with the progress from Sprint One, I managed to pretty much create my first database based off the news page. It was a bit of a challenge starting everything up but the first time is always going to be difficult, so hopefully it will get easier with time! I got my testing py running as, which will be helpful when I am testing my sql queries before I put them into the actual website/database. </p>
+<p>Overall I am pleased with the progress from Sprint One, I managed to pretty much create my first database based off the news page. It was a bit of a challenge starting everything up but the first time is always going to be difficult, so hopefully it will get easier with time! I got my testing.py page up and running, which will be helpful when I am testing my sql queries before I put them into the actual website/database. </p>
 <hr>
-<h2>Sprint Two</h2>
-<p>In my next sprint, I decided to add another database based off my classes page. I had already made the classes page for the website and done all the styles so it just involved adding in the database, in quite a similar fashion to the news database.  This would be a more a bit more difficult as it would include a few more pages, as it meant the people who had an authorisation of 0 (the teachers at the dance school) would be able to view who was in the classes, and add people or delete people. I had to connect the members database to the classes database and add a datalist so that when the teachers were trying to add people to the classes, they could see who was a member in the dance school. A lot of this database was actually quite similar to the news database so a lot of the code I just copied through and changed for the classes page. </p>
+<h2 id="S2">Sprint Two</h2>
+<p>Before doing the classes database, I had originally only created a timetable on my classes page. So, there was no information about each class but I decided that this would be useful for the people considering what class to join. Below you can see the screenshot of what the classes page looked like before I added the database. In Sprint 3, you can see a video that shows what the classes page looked like after the classes database was almost complete. </p>
+    <img class="img-fluid" src="assets/images/Classes_before.png">
+<p>In this sprint I decided to add another database based off my classes page. As you can see in the screenshot above, I had already made the classes page for the website. I did change it a bit, as I mentioned above, I added information about each class and did all the styles, in quite a similar fashion to the layout of the news database. A lot of this database was actually quite similar to the news database so a lot of the code I just copied through and changed for the classes page. </p>
 <h3>Classes Database Planning Board</h3>
 <p>This is a screenshot of the planning board I made to create the classes database.</p>
 <a href="https://github.com/users/sophiemcclintock/projects/7/views/1?visibleFields=%5B%22Title%22%2C%22Status%22%2C%22Labels%22%5D">This is the link to the classes database planning board</a>
@@ -127,7 +135,7 @@
     <img class="img-fluid" src="assets/images/Database_plan2.jpg">
 <hr>
 <h4>The classes table in the create_db sqlite file</h4>
-<p>This sprint just required me created one more table, the classes table as seen in the screenshot below. I used the plan above and as with Sprint One,  I also added a foreign key reference at the bottom of the classes table to contact member_id in the members table (which is the primary key) to the member_id in the classes table (which is the foreign key). Below the table you can also see some of the inputs that I have put into the classes table, the Jazz, Contemporary, Tap and Hip Hop classes and the content to tell people what each of these styles are. </p>
+<p>This sprint just required me created one more table, the classes table as seen in the screenshot below. I used the plan above and as with Sprint One,  I also added a foreign key reference at the bottom of the classes table to connect the member_id in the members table (which is the primary key) to the member_id in the classes table (which is the foreign key). Below the table you can also see some of the inputs that I have put into the classes table, the Jazz, Contemporary, Tap and Hip Hop classes and the content to tell people what each of these styles are. </p>
     <img class="img-fluid" src="assets/images/Classes_table_and_inputs.png">
 <h4>Testing for the first sql query for Sprint Two</h4>
 <p>This test is very similar to the news test, it involves combining the classes and member tables so they can run together. Again, as you can see in the ‘run’ area below there are the values for each class, the title, the content, and the image. All the update, delete and add more information was very similar to the news database so I did not really have to do anything new. </p>
@@ -135,8 +143,8 @@
 <h3>Reflection</h3>
 <p>Like I have said a few times, this was quite an easy sprint because I just copied a lot of the information over from the news database. I changed the layout of the classes page a bit and I am happy at how it looks now. My next step is to add the session information and organise the log in, log out information. This will be really helpful because it means I can sort out who has the authorization to add new news items and add people to classes etc. </p>
 <hr>
-<h2>Sprint 3</h2>
-<p>For this sprint I put the databases on hold for a second and add the sessions and log in and out functions. I started by setting up the log in and log out and making sure that worked. Then I added the session to all the pages that needed it, like the news page and classes page. This meant that if we were in session (logged in) and people had a certain authorisation people could add new items and add different students to the class. If we were just in session (logged in) then the ‘log in’ in the corner would change to a log out and we would be able to see who was logged in, what their member_id was and what their authorization was. </p>
+<h2 id="S3">Sprint 3</h2>
+<p>For this sprint I put the databases on hold for a second and added the sessions and log in and out functions. I started by setting up the log in and log out and making sure that worked. Then I added the session to all the pages that needed it, like the news page and classes page. This meant that if someone was in session (logged in) and had a certain authorisation, they could add new items and add different students to the class. This authorisation is mostly reserved for the teachers or anyone else high up in the dance school. When anyone is in session (logged in), despite their authorisation, the ‘log in’ in the corner would change to a log out and we would be able to see who was logged in, what their member_id was and what their authorization was. </p>
 <p>Below you can see a video of me testing to check if the sessions and log in/log out was working</p>
 <video controls>
             <source src="assets/vids/Sessions_recording.mp4" type="video/mp4">
@@ -145,8 +153,8 @@
 <h3>Reflection</h3>
 <p>This sprint was a little bit more difficult as I had to work around the databases and make sure that it worked no matter who was signed in and the different authorization gave you access to different things. The next thing for me to do is create a registration table that links the classes table and the member table.</p>
 <hr>
-<h2>Sprint 4</h2>
-<p>In this sprint, I created a registration table that connected the classes table to the members table so that people could be enrolled in different classes, as well as a members table. This involved creating a google sheets table and importing it into Py charm so that I didn’t have to write out every single entry and could just get the information from the table. It also involved creating a new page that only people with a certain authorization could access, named members where you could see everyone who was enrolled in the dance school. Below you can see the plan I have done that includes the registration table. </p>
+<h2 id="S4">Sprint 4</h2>
+<p>In this sprint, I created a registration table that connected the classes table to the members table so that people could be enrolled in different classes. This involved creating a google sheets table and importing it into Py charm so that I didn’t have to write out every single entry and could just get the information from the table. I knew that this sprint would be a bit more difficult as it would include a few more pages, it meant the people who had an authorisation of 0 (the teachers at the dance school) would be able to view who was in the classes, and add people or delete people. I had to connect the members database to the classes database and add a datalist so that when the teachers were trying to add people to the classes, they could see who was a member in the dance school. </p>
 <h3>Registration Database Planning Board</h3>
 <p>This is a screenshot of the planning board I made to create the registration database.</p>
 <a href="https://github.com/users/sophiemcclintock/projects/8/views/1?visibleFields=%5B%22Title%22%2C%22Status%22%2C%22Labels%22%5D">This is the link to the registration database planning board</a>
@@ -156,11 +164,11 @@
     <img class="img-fluid" src="assets/images/Database_plan4.jpg">
 <hr>
 <h4>The registration table in the create_db file</h4>
-<p>Again, I created a registration table in the create_db file. I created a member_id and classes_id so that I could connect each member to a particular class. The foreign keys each connected to a different table, the member_id in the registration table connected to the member_id in the member table and the classes_if in the registration table connected to the classes_id in the classes table. On the members table in the google sheet that I had previously put in the database, I had written what class each person was in so this connected to the registration table. </p>
+<p>Again, I created a registration table in the create_db file. I created a member_id and classes_id so that I could connect each member to a particular class. The foreign keys each connected to a different table, the member_id in the registration table connected to the member_id in the member table and the classes_id in the registration table connected to the classes_id in the classes table. On the members table in the google sheet that I had previously put in the database, I had written what class each person was in so this connected to the registration table. </p>
 <img class="img-fluid" src="assets/images/Registration_table.png">
 <hr>
 <h4>Code for registration on layout.py</h4>
-<p>Below you can see the code for the registration table in the layout.py. There is code so that the teachers can delete people from the classes and add people to the classes. The query after the delete query is making sure that the teachers can see who is registered in each class and then the next query is making sure when the teachers are trying to add people, they can see everyone in the member database. I also had to put in an error message in case the teachers tried to add someone who was already registered in the particular class. </p>
+<p>Below you can see the code for the registration table in the layout.py. Included in this code is a query ensuring that the teachers can delete people from the classes and add people to the classes. The query after the delete query is making sure that the teachers can see who is registered in each class and then the next query is making sure when the teachers are trying to add people, they can see everyone in the member database. I also had to put in an error message in case the teachers tried to add someone who was already registered in the particular class. </p>
 <pre style="font-size: 1em;"><code class="Python">def registration():
     data = request.args
     print(data.keys())
@@ -216,13 +224,13 @@
 <h4>Reflection</h4>
 <p>This sprint was definitely a little bit more difficult because it required connecting the tables quite a bit more, in the queries and within the tables themselves. It was also quite different from the other two databases, which were quite similar to each other. But, I am pleased with the result, it is really good being able to add people from the members to the classes, it adds a new dimension to the website/database. </p>
 <hr>
-<h2>Sprint 5</h2>
-<p>For this sprint I created one more database based off the contact forms and touched up lots of little things in the other databases. The contact database was pretty much exactly the same as the news and classes database. So that did not require too much work. I have already put a final plan of all the tables at the top of the planning site, so I have not put another one below. The contact table is connected to any other table at the moment. </p>
+<h2 id="S5">Sprint 5</h2>
+<p>For this sprint I created one more database based off the contact forms and touched up lots of little things in the other databases. The contact database was pretty much exactly the same as the news and classes database. So that did not require too much work. I have already put a final plan of all the tables at the top of the planning site, so I have not put another one below. The contact table is not connected to any other table at the moment. </p>
 <h4>The contact table in the create_db file</h4>
 <p>Below you can see the contact table as well as an input that I have put in the contact table so that it is easy to test</p>
 <img class="img-fluid" src="assets/images/Contact_table.png">
 <h4>Overall Reflection on the Databases</h4>
-<p>Overall, the database was difficult to make and some things came out a bit differently to what I was expecting. But overall, I am happy with how the website runs, in my opinion it is easy to navigate and the databases make sense where they are. An issue that I ran into was that because for each different class, there is a photo, I wasn’t sure what the best way was for the teachers to be able to put in a different photo via the website. This is something that I would want to do if I had more time. I would also like to implement a ‘roll’ idea to the classes/member database so that when the classes happened you could tick who came and who didn’t, and then you would be able to see how much each student has attended the particular class. Another thing that I would probably do if I had more time would create a way for the teachers to view more information about the members, for example, their birthday or year at school. This would be useful and seeing as it is already information that the members had to put in in order to enrol, it would not be too difficult to do. But, these are all things that would require a little bit more time and overall, I am happy with how much I got done. </p>
+<p>Overall, the database was difficult to make and some things came out a bit differently to what I was expecting. But overall, I am happy with how the website runs, in my opinion it is easy to navigate and the databases make sense where they are. For each new class that is created, there a photo attached to it, but I wasn’t sure what the best way was for the teachers to be able to put in a different photo via the website, so this is an issue that has not been fixed. This is something that I would want to do if I had more time. I would also like to implement a ‘roll’ idea to the classes/member database so that when the classes happened you could tick who came and who didn’t, and then you would be able to see how much each student has attended the particular class. Another thing that I would probably do if I had more time would create a way for the teachers to view more information about the members, for example, their birthday or year at school. This would be useful and seeing as it is already information that the members had to put in in order to enrol, it would not be too difficult to do. The last thing that I would put it is a remove button so you could remove people from the members database, say if they have left the school so are no longer dancing at the company. But, these are all things that would require a little bit more time and overall, I am happy with how much I got done. </p>
 <hr>
 <h3>Addressing Relevant Implications</h3>
 <h4>Privacy</h4>
